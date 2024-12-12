@@ -1,9 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-
+import SplitPane from 'react-split-pane';
+class App extends React.component{
+  handleDrag=()=<{
+   console.log('Dragging the pane');
+  };
 function App() {
   return (
+    <SplitPane split="vertical" onDrag={this.handleDrag} minSize={50} defaultSize={100}>
     <div>
     <div className="App">
       <h1>Simulation of Finite Machine </h1>
@@ -35,6 +40,7 @@ function App() {
       </p>
     </div>
     </div>
+    </SplitPane>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -51,6 +57,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
+   
   );
 }
 
